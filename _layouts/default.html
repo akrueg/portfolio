@@ -4,22 +4,12 @@
 <head>
   <title>{{ page.title }}</title>
   <link rel="stylesheet" type="text/css" href="/portfolio/css/main.css">
-  {{#each page.css}}
-  <link rel="stylesheet" type="text/css" href="/portfolio/css/{{ . }}.css">
-  {{/each}}
+  {% for sheet in page.css %}
+  <link rel="stylesheet" type="text/css" href="/portfolio/css/{{ sheet }}.css">
+  {% endfor %}
 </head>
 
 <body>
-  {{#each page.css}}
-  css: {{ . }}
-  {{/each}}
-  
-  {% for c in page.css %}
-  CSS: {{ c }}
-  {% endfor %}
-
-  
-  xxxxxxxxxxxxxx
   {{ content }}
 </body>
 
