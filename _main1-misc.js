@@ -21,9 +21,9 @@ Element.prototype.qsa=qsa //.bind(Element.prototype)
 function qsam(s1,s2,el1,el2){
   el1=el1||doc
   el2=el2||doc
-  q1=Array.from(el1.qsa(s1))
-  q2=Array.from(el2.qsa(s2))
-  return q1.filter(el=>{return !q2.includes(el)}) }
+  var q1=el1.qsa(s1),
+      q2=el2.qsa(s2)
+  return q1.filter(el=>!q2.includes(el)) }
 
 //Give everybody an id, so I can do things like query event.target.id:
 win.id='win'; doc.id='doc'; html.id='html';body.id='body'
