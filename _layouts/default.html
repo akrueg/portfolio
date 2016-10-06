@@ -5,11 +5,16 @@
   <title>{{ page.title }}</title>
   <link rel="stylesheet" type="text/css" href="/portfolio/css/main.css">
   {{#each page.css}}
-  <link rel="stylesheet" type="text/css" href="/portfolio/css/{{.}}.css">
+  <link rel="stylesheet" type="text/css" href="/portfolio/css/{{ . }}.css">
   {{/each}}
 </head>
 
 <body>
+  {{#each page.css}}
+  css: {{ . }}
+  {{/each}}
+
+  
   xxxxxxxxxxxxxx
   {{ content }}
 </body>
