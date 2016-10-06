@@ -1,8 +1,12 @@
 ---
 layout: main
 title: Inline formatting 1: box types
-css: inline1
-js: inline1
+css:
+- inline0
+- inline1
+js:
+- inline0
+- inline1
 ---
 
 ###Inline formatting 1: box types
