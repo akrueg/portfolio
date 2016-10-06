@@ -1,7 +1,9 @@
 ---
 layout: default
 title: tItLe Web portfolio of Andy Krueger
-css: index
+css: 
+- index
+- index2
 ---
 
 ## Resume / web portfolio of Andy Krueger
