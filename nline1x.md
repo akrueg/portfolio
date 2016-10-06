@@ -1,6 +1,6 @@
 ---
 layout: main
-title: Inline formatting 1: box types
+title: nline formatting 1: box types
 ---
 
 **test**
