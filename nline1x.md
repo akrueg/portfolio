@@ -1,5 +1,5 @@
 ---
-layout: mainx
+layout: mainxx
 title: nline formatting 1 box types
 ---
 
