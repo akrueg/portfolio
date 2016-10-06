@@ -1,6 +1,6 @@
 ---
-layout: default
-title: tItLe Web portfolio of Andy Krueger
+layout: main
+title: Web portfolio of Andy Krueger
 css: index
 ---
 
