@@ -13,6 +13,10 @@
   {{#each page.css}}
   css: {{ . }}
   {{/each}}
+  
+  {% for c in page.css %}
+  CSS: {{ c }}
+  {% endfor %}
 
   
   xxxxxxxxxxxxxx
