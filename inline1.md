@@ -1,9 +1,9 @@
 ---
 layout: default
-title: animal&#58; horse
+title: day&#58; monday
 ---
 
-APPLE BANANA CHERRY DURIAN ELDERBERRY
+APPLE BANANA CHERRY DURIAN ELDERBERRY FIG
 
 ### Inline formatting 1: box types
 
