@@ -1,6 +1,6 @@
 ---
 layout: default
-title:! animal: horse
+title: animal&#58; horse
 ---
 
 DEFAULT APPLE BANANA CHERRY DURIAN
