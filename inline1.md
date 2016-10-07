@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Inline formatting 1
+title: 'Inline formatting 1: now with colon'
 ---
 
 ### Inline formatting 1: box types
