@@ -1,6 +1,6 @@
 ---
 layout: default
-title: day&#58; monday
+title: day: tuesday
 ---
 
 APPLE BANANA CHERRY DURIAN ELDERBERRY FIG
