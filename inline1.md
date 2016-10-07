@@ -3,7 +3,7 @@ layout: default
 title: animal&#58; horse
 ---
 
-DEFAULT APPLE BANANA CHERRY DURIAN ELDERBERRY
+APPLE BANANA CHERRY DURIAN ELDERBERRY
 
 ### Inline formatting 1: box types
 
