@@ -1,9 +1,9 @@
 ---
 layout: default
-title: ! Inline: colon colon
+title: 'Inline: colon colon'
 ---
 
-DEFAULT APPLE
+DEFAULT APPLE BANANA
 
 ### Inline formatting 1: box types
 
