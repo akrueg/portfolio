@@ -3,6 +3,8 @@ layout: default
 title: ! Inline formatting 1x: now with colon2
 ---
 
+DEFAULT
+
 ### Inline formatting 1: box types
 
 A block box comprises one block-width _line box_ per line of inline
