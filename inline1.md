@@ -1,9 +1,9 @@
 ---
 layout: default
-title: ! Inline formatting 1x: now with colon2
+title: ! Inline: colon colon
 ---
 
-DEFAULT
+DEFAULT APPLE
 
 ### Inline formatting 1: box types
 
