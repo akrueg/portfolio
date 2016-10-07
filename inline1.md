@@ -1,9 +1,9 @@
 ---
 layout: default
-title: ! animal: alligator
+title: ! animal: horse
 ---
 
-DEFAULT APPLE BANANA CHERRY
+DEFAULT APPLE BANANA CHERRY DURIAN
 
 ### Inline formatting 1: box types
 
