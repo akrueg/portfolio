@@ -1,9 +1,9 @@
 ---
 layout: default
-title: 'Inline: colon colon'
+title: ! alligator
 ---
 
-DEFAULT APPLE BANANA
+DEFAULT APPLE BANANA CHERRY
 
 ### Inline formatting 1: box types
 
