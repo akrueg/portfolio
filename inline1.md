@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ! alligator
+title: ! animal: alligator
 ---
 
 DEFAULT APPLE BANANA CHERRY
