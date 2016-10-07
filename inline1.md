@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Inline formatting 1: box typeSSS
+title: Inline formatting 1
 ---
 
 ### Inline formatting 1: box types
