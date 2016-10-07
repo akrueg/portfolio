@@ -1,5 +1,5 @@
 ---
-layout: default2
+layout: default
 title: Inline formatting 1: box typeSSS
 css:
 - inline0
