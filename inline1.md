@@ -375,7 +375,7 @@ The content box's background can mask the line above, due to
 - padding / border
 - small line-height.
 
-Initisl settings below: 
+Initial settings below: 
 
 - {padding-top: 4px;
 -  line-height: 1  } <meta c='preList'>
