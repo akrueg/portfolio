@@ -9,5 +9,6 @@ Having determined that, I hardcoded those fonts into my css:
   - expert
 
 <script>
+  body.style.background='red'
   adjustMargins()
 </script>
