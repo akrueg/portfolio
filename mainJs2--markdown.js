@@ -306,39 +306,58 @@ function spacesAtEndOfLastTextnodeOf(el){
   if (lc.nodeType!==3) return 0
   return /[ ]*(?=\n*$)/.exec(lc.data)[0].length }
 
-/* Blank line before sublist causes md to put line before in <p> (marked *):
+/* Blank line before sublist => p+sublist case
+No blank line before sublist => textnode+sublist case:
 
-textnode+sublist:        p+sublist:
-0     => <p>0</p>        0     => <p>0</p>
-                                          
-- 1      <ul>            - 1      <ul>         
-  - 2    <li>1**                  <li><p>1</p>*
-                           - 2
-         <ul>                     <ul>         
-         <li>2</li>               <li>2</li>
-         </ul></li>               </ul></li>
-         </ul>                    </ul>
+textnode+sublist:        
 
-In the textnode+sublist case, the position occupied by the number 1 ( marked **) 
-can end with 1 \s or 1 <br>.  Let these set the top margin of the sublist, 
-interpreting <br> as 2 spaces. */
+        RedCarpet:     KramDown:
+        ----------     ----------------
+- 1*    <ul>           <ul>
+  - 2   <li>1**          <li>1**
+                           <ul>
+        <ul>                 <li>2</li>
+        <li>2</li>         </ul>
+        </ul></li>       </li>
+        </ul>          </ul>
+
+p+sublist:
+        ------------   ----------------
+- 1     <ul>           <ul> 
+        <li><p>1</p>     <li>
+  - 2                      <p>1</p>
+        <ul>         
+        <li>2</li>         <ul>
+        </ul></li>           <li>2</li>
+        </ul>              </ul>
+                         </li>
+                       </ul>
+                         
+* is a position in which I can put spaces
+** is the position in which md puts either 1 \s or <br> as a result
+Let these set the top margin of the sublist, interpreting <br> as 2 spaces. */
 function handleSublistCase(el) {
-  var q; if (!(q=el.qsa('ul,ol')).length) return 0 //Signals 'Not sublist case; keep checking.'
-  var sl=q[0], cn=el.childNodes       // Find sublist & its index.
-  for (var i=0;i<cn.length;++i) if (cn[i]===sl) break           
-  // Filter out p+sublist case: <li><p>...</p>\n\n<u|ol>
-  //                                cn[0]     [1] [2]
-  if (i===2 && cn[1].data==='\n\n' && cn[0].tagName==='P') return 1 // Signals 'done.'
-  // In textnode+sublist case, <li> can have any number of inline children before sublist,
-  // eg. <li><em>x</em>y\n\n<ul>.  Work back from sublist: 
-  var s=0 //Check for <li>...text<br> \n\n <u|ol>
-          //             cn[i-3] [-2] [-1] [i]
-  if (i>=2 && cn[i-2].tagName==='BR') {el.removeChild(cn[i-1]); s=2}
-  // Else check for <li>...\s\n\n<u|ol>
-  else if (i>=1 && cn[i-1].nodeType===3) 
-    s=/[ ]*(?=\n*$)/.exec(cn[i-1].data)[0].length 
-  if (s>0) sl.style.marginTop=s+'em'
-  return 1 }
+  // Verify sublist:
+  for (var i=0;i<el.children.length;++i)
+    if (/^[O|U]L$/.test(el.children[i].tagName)){
+      var sl=el.children[i],
+          prev=sl.previousElementSibling
+      break }
+  if (!sl) return 0 // Signal 'Keep checking.'
+  if (prev && prev.tagName==='P') return 1 // P+sublist case; signal 'Done.'
+  if (prev && prev.tagName==='BR') {
+    el.removeChild(prev)
+    adjustTopMarginOfSublist(sl, 2) // <Br> counts as 2 spaces.
+    return 1 }
+  // Else check for spaces at end of textnode before sublist:
+  prev=sl.previousSibling
+  if (!prev || prev.nodeType!==3) return 1 // Verify textnode.
+  var trailing=/(\s*)$/.exec(prev.data)[1] // trailing whitespace
+  var s=/([ ]*)/.exec(trailing)[1].length // \s at beginning of whitespace
+  if (s) adjustTopMarginOfSublist(sl,s) }
+
+function adjustTopMarginOfSublist(sl, s){
+  sl.style.marginTop=s+'em' }
 
 function adjustBottomMarginOf(el, s){ // and possibly top margin of next el.
 // Meaning of number of spaces depends on the two elements' default interaction:
