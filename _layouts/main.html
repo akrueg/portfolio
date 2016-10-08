@@ -7,17 +7,17 @@
   {% for sheet in page.css %}
   <link rel='stylesheet' type='text/css' href='/portfolio/{{ sheet }}.css'>
   {% endfor %}
+</head>
+
+<body>
+  {{ content }}
+  
   <script type='text/javascript' src='/portfolio/mainJs1--misc.js'></script>
   <script type='text/javascript' src='/portfolio/mainJs2--markdown.js'></script>
   <script type='text/javascript' src='/portfolio/mainJs3--drag-size.js'></script>
   {% for script in page.js %}
   <link rel='stylesheet' type='text/javascript' href='/portfolio/{{ script }}.js'>
   {% endfor %}
-</head>
-
-<body>
-  LAYOUT3
-  {{ content }}
 </body>
 
 </html>
