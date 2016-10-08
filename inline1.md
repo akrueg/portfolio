@@ -88,7 +88,7 @@ a-span's font-size):
        <label>normal</label></p>
     <p>0
       <span id='Ctr02spTriangles'>
-        <input id='Ctr02slider1' type='range' value='60' max=200>
+        <input id='Ctr02slider1' xtype='range' value='60' max=200>
         <span>&#9650;</span>
         <span>&#9650;</span>
       </span>
