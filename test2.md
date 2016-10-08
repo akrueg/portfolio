@@ -1,5 +1,6 @@
 ---
 layout: main
+js: testJs
 ---
 
 Having determined that, I hardcoded those fonts into my css:
@@ -8,7 +9,3 @@ Having determined that, I hardcoded those fonts into my css:
 - Upload with settings:
   - expert
 
-<script type="text/javascript">
-  body.style.background='red'
-  adjustMargins()
-</script>
