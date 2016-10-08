@@ -1,23 +1,47 @@
 'use strict'
 
 function addUnderlining(){
-  // raw text:     markdown:                         output of this fxn:
+  // raw text:     RedCarpet / KramDown:             output of this fxn:
   // ____text____  _<strong><em>text</em></strong>_  <u>text</u>
-  for(var em of qsa('strong>em')) {
-    var strong=em.parentElement //Query returns the <em>s; I want the <strong>s.
-    //must be preceded & followed by textnodes:
-    var ps=strong.previousSibling; if (!ps || ps.nodeType!==3) continue
-    //and bounded by _:
-    var dta=ps.data; if (dta.slice(-1)!=='_') continue
-    var ns=strong.nextSibling; if (!ns || ns.nodeType!==3) continue
-    dta=ns.data; if (dta.slice(0,1)!=='_') continue
-    //Else found match.  Remove extra underscores:
-    ps.data=ps.data.slice(0,-1); ns.data=ns.data.slice(1)
-    var parent=strong.parentNode,
-        u=doc.createElement('u')
-    u.innerHTML=em.innerHTML
-    parent.insertBefore(u,strong)
-    parent.removeChild(strong) }}
+  //                <strong>__4</strong>__
+  for(var st of qsa('strong')) {
+    var em=st.querySelector('em')
+    if (em) addUnderliningRedCarpet(st,em)
+    else    addUnderliningKramDown(st) }}
+  
+function addUnderliningKramDown(st){
+  // Must begin with __:
+  var fc=st.firstChild
+  if (!fc || fc.nodeType!==3) return
+  var data=fc.data; if (data.slice(0,2)!=='__') return
+  // Must be followed by __:
+  var ns=st.nextSibling
+  if (!ns || ns.nodeType!==3) return
+  data=ns.data; if (data.slice(0,2)!=='__') return
+  // Else found match.  Remove extra underscores:
+  fc.data=fc.data.slice(2); ns.data=ns.data.slice(2)
+  // Repackage in <u>:
+  var parent=st.parentNode,
+      u=doc.createElement('u')
+  u.innerHTML=st.innerHTML
+  parent.insertBefore(u,st)
+  parent.removeChild(st) }
+
+function addUnderliningRedCarpet(st,em) {
+  // Must be preceded & followed by textnodes:
+  var ps=st.previousSibling; if (!ps || ps.nodeType!==3) return
+  // and bounded by _:
+  var dta=ps.data; if (dta.slice(-1)!=='_') return
+  var ns=st.nextSibling; if (!ns || ns.nodeType!==3) return
+  dta=ns.data; if (dta.slice(0,1)!=='_') return
+  // Else found match.  Remove extra underscores:
+  ps.data=ps.data.slice(0,-1); ns.data=ns.data.slice(1)
+  // Repackage in <u>:
+  var parent=st.parentNode,
+      u=doc.createElement('u')
+  u.innerHTML=em.innerHTML
+  parent.insertBefore(u,st)
+  parent.removeChild(st) }
 
 function addMonospace(){
   // _.  text  ._ => 
