@@ -364,7 +364,7 @@ affect inline (horizontal) flow:
 </div>
 
 <div id='Ctr03' class='controls'>
-  <select id=Ctr03sel1 data-opts='inline,inline-block'></select>
+  <select id='Ctr03sel1' data-opts='inline,inline-block'></select>
   <p><span>margin:      </span> <input type='range' id='Ctr03slider1' value='0' max='20'></p>
   <p><span>border-width:</span> <input type='range' id='Ctr03slider2' value='0' max='20'></p>
   <p><span>padding:     </span> <input type='range' id='Ctr03slider3' value='0' max='20'></p>
