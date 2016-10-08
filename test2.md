@@ -1,6 +1,5 @@
 ---
 layout: main
-js: testJs
 ---
 
 - Upload
