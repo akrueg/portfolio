@@ -1,2 +1,2 @@
-body.style.background='red'
+body.style.background='lightblue'
 adjustMargins()
