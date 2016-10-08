@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: 'Inline formatting 1: box types'
 css:
 - inline0
