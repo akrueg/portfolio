@@ -139,7 +139,7 @@ Click button above to re-show.
 -------------------------------------------------------------------->
 <div class='discloseC mdCaptureStart'></div>
 
-**Fonts used**
+Note about fonts used
 
 Initially, I found myself working with these fonts due to the following mechanisms:
 Chromium (hamburger button / settings / show advanced / web content / customize fonts)
