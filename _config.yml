@@ -1,5 +1,2 @@
-name: siteName3
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
+name: siteName4
+markdown: aassdefef
