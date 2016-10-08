@@ -3,7 +3,7 @@ layout: main
 js: test
 ---
 
-Having determined that, I hardcoded those fonts into my css:
+H:
 
 - Upload to [FontSquirrel's converter] (http://www.fontsquirrel.com/tools/webfont-generator) 
   with settings:
