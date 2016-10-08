@@ -1,7 +1,7 @@
 ---
 ---
-<span><input type='range' value='60' max='200'></span>
+<input type='range' value='60' max='200'>
 
-<span><input type='range' value='60' max=200></span>
+<input type='range' value='60' max=200>
 
-8
+9
