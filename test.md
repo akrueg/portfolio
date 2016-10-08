@@ -7,8 +7,6 @@ css:
 js: test
 ---
 
-<div class='discloseC mdCaptureStart'></div>
-
 **Fonts used**
 
 Initially, I found myself working with these fonts due to the following mechanisms:
@@ -114,8 +112,6 @@ represent 3 bytes of encoded data.  Thus base64 is not a compression algorithm
 Woff (web open font format) works with Chromium and, according to CanIUse, 94%
 of US browsers, the exception being legacy IE, which needs eot (embedded open 
 type).
-
-<div class='mdCaptureEnd'></div>
 
 
 <!-------------------------------------------------------------------
