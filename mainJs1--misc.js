@@ -12,6 +12,7 @@ var log =console.log.bind(console),
 log(doc)
 logj(doc)
 log(doc.body)
+log(document.body)
 log(body)
 
 //querySelector shortcuts:
