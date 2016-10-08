@@ -378,8 +378,7 @@ The content box's background can mask the line above, due to
 Initisl settings below: 
 
 - {padding-top: 4px;
--  line-height: 1  }
-<meta c='preList'>
+-  line-height: 1  } <meta c='preList'>
 
 <!-------------------------------------------------------------------
 ---------------------------------------------------------------------
