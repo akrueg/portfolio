@@ -375,7 +375,7 @@ The content box's background can mask the line above, due to
 - padding / border
 - small line-height.
 
-Green `<span>` below is initially {
+Green `<span>` below is initially { 
 
 ```
   padding    : 4px;
