@@ -365,9 +365,9 @@ affect inline (horizontal) flow:
 
 <div id='Ctr03' class='controls'>
   <select id=Ctr03sel1 data-opts='inline,inline-block'></select>
-  <p><span>margin:      </span> <input type='range' id='Ctr03slider1' value=0 max=20></p>
-  <p><span>border-width:</span> <input type='range' id='Ctr03slider2' value=0 max=20></p>
-  <p><span>padding:     </span> <input type='range' id='Ctr03slider3' value=0 max=20></p>
+  <p><span>margin:      </span> <input type='range' id='Ctr03slider1' value='0' max='20'></p>
+  <p><span>border-width:</span> <input type='range' id='Ctr03slider2' value='0' max='20'></p>
+  <p><span>padding:     </span> <input type='range' id='Ctr03slider3' value='0' max='20'></p>
 </div>
 
 The content box's background can mask the line above, due to 
@@ -392,9 +392,11 @@ Initisl settings below:
 </div>
 
 <div id='Ctr04' class='controls'>
-  <p><span>padding:    </span> 0<input type='range' id='Ctr04slider1' value=4 max=20>20px</p>
-  <p><span>line-height:</span> 0<input type='range' id='Ctr04slider2' min=0 value=1 max=2 step=.1>2</p>
+  <p><span>padding:    </span> 0<input type='range' id='Ctr04slider1' value='4' max='20'>20px</p>
+  <p><span>line-height:</span> 0<input type='range' id='Ctr04slider2' min='0' value='1' max='2' step='.1'>2</p>
 </div>
+
+
 
 
 
