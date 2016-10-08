@@ -2,4 +2,4 @@
 
 <span><input type='range' value='60' max=200></span>
 
-6
+7
