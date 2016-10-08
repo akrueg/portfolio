@@ -1,8 +1,5 @@
----
----
-
 <span><input type='range' value='60' max='200'></span>
 
 <span><input type='range' value='60' max=200></span>
 
-4
+5
