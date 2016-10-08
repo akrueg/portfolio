@@ -1,4 +1,6 @@
 'use strict'
+debugger
+
 standardInit()
 inlineFormattingInit()
 //scrollToEl('18v')
@@ -7,7 +9,6 @@ var refresh=111111
 // example 1
 bindCheck(Ctr01chkS2Display,Ex01s2,'display','inline-block','inline')
 Ctr01chkS3Display.onclick=()=>{
-  debugger
   Ctr01chkS2Display.checked=false
   Ex01s2.style.display='inline'
   Ex01s1.style.display   =Ex01s3.style.display   =Ctr01chkS3Display.checked?'inline-block':'inline'
