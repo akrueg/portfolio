@@ -10,6 +10,7 @@ var log =console.log.bind(console),
     body=doc.body
 
 log(doc)
+logj(doc)
 log(doc.body)
 log(body)
 
