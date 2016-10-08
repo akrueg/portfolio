@@ -99,6 +99,8 @@ input[type=range   ]    {transform      :scale(1,1.4)
                                                          white 10%,
                                                          #B3CECE) ;
                         cursor          :pointer                  }
+.minorNote .disclosureTitle{
+                        color           :grey                     }
 
 /* Markdown-related: */
 .pre, /* Monospace zones within which markdown is parsed */
