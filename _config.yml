@@ -1,2 +1,5 @@
 name: siteName2
-markdown: redcarpet
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
