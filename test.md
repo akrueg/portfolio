@@ -3,10 +3,10 @@ layout: main
 js: test
 ---
 
-H:
+H
 
-- U:
-  - css: base64 encode
+- U
+  - c
 - Download kit; extract; open styles.css.
 - use the following css:
 
