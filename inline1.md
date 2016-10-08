@@ -375,10 +375,12 @@ The content box's background can mask the line above, due to
 - padding / border
 - small line-height.
 
-Initial settings below: 
+Green `<span>` below is initially { 
 
-- {padding-top: 4px;
--  line-height: 1  } <meta c='preList'>
+```
+  padding    : 4px;
+  line-height: 1  }  
+```
 
 <!-------------------------------------------------------------------
 ---------------------------------------------------------------------
