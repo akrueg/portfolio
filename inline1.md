@@ -228,14 +228,14 @@ Having determined that, I hardcoded those fonts into my css:
   src        : url(data:application/font-woff;charset=utf-8;base64,_b64string_{green}) 
                format('woff' _(or other)_{green}) } <meta c='pre'>
 
-Base64 encodes binary as text using 64 printable characters: 
+Base64 encodes binary as text using 64 printable characters:
 
 - A-Z, a-z, 0-9 - which is 62 characters.
 - Last 2 chars are + / in 'standard base64' variant, which is what FontSquirrel
   generates, which Chromium accepts.
 - [Wikipedia entry] (https://en.wikipedia.org/wiki/Base64#URL\_applications)
   talks about the need to either use 'modified Base64 for URL' or encode the 
-  standard b64 string, I think when passing it to a server as a url-encoded datum. 
+  standard b64 string, I think when passing it to a server as a url-encoded datum.
   
 64 = 2^6: each character represents a sextet (6 bits); hence each 4 characters
 represent 3 bytes of encoded data.  Thus base64 is not a compression algorithm
