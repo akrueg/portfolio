@@ -9,7 +9,7 @@ js:
 - inline1
 ---
 
-### Inline formatting 1: box types X
+### Inline formatting 1: box types X2
 
 A block box comprises one block-width _line box_ per line of inline
 text, without vertical overlapping or gaps.  The block below contains
