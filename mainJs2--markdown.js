@@ -267,13 +267,17 @@ function detectSpacesIn(el) {
   if (!(s=spacesAfterClosingTagOf(el)))
     // Else check for <pre><code>, <li>, or <p>:
     if (el.tagName==='PRE' && el.children[0] && el.children[0].tagName==='CODE')
-      s=spacesAtEndOfLastTextnodeOf(el.children[0])
+      s=spacesAtEndOf(el.children[0])
     else if (el.tagName==='LI') {
-      // Check sublist case:
-      if (!handleSublistCase(el)) // Retval 0 => check no-sublist case:
-        s=spacesAtEndOfLastTextnodeOf(el) }
+      // If el contains a sublist,
+      // a) don't need to checkfor spacesAtEndOf(el),
+      //    because they'll be contained in the last <li> of the sublist 
+      //    or a <p> after the sublist;
+      // b) do need to check for the special textnode+sublist case (see below).
+      if (!handleSublistCase(el)) // Retval 0 => no sublist; keep checking:
+        s=spacesAtEndOf(el) }
     else if (el.tagName==='P')
-      s=spacesAtEndOfLastTextnodeOf(el)
+      s=spacesAtEndOf(el)
   if (s>0) adjustBottomMarginOf(el, s)
   // Recurse:
   if (/^(BODY|BLOCKQUOTE|UL|OL|LI)$/.test(el.tagName) || 
@@ -296,14 +300,23 @@ function spacesAfterClosingTagOf(el){
   if (!ns || ns.nodeType!==3) return 0
   return /^[ ]*/.exec(ns.data)[0].length }  // \s includes \n; [ ] doesn't.
   
-function spacesAtEndOfLastTextnodeOf(el){
+// Count spaces at end of last textnode
+// OR special <li>...<br></li> case:
+function spacesAtEndOf(el){
   var lc=el.lastChild
   if (!lc) return 0
   if (el.tagName==='LI' && lc.tagName==='BR') {
     el.removeChild(lc)
     return 2 }
-  if (lc.nodeType!==3) return 0
-  return /[ ]*(?=\n*$)/.exec(lc.data)[0].length }
+  return spacesAtEndOfTextNode(lc) }
+
+// Spaces at end, after last \S (non-whitespace) content
+// but on same line, not after \n; 
+// spaces after \S and after \n are just tag indentation.
+function spacesAtEndOfTextNode(tn){
+  if (!tn || tn.nodeType!==3) return 0
+  var trailing=/(\s*)$/.exec(tn.data)[1]     // trailing whitespace
+  return /([ ]*)/.exec(trailing)[1].length } // \s at beginning of whitespace
 
 /* Blank line before sublist => p+sublist case
 No blank line before sublist => textnode+sublist case:
@@ -349,11 +362,9 @@ function handleSublistCase(el) {
     adjustTopMarginOfSublist(sl, 2) // <Br> counts as 2 spaces.
     return 1 }
   // Else check for spaces at end of textnode before sublist:
-  prev=sl.previousSibling
-  if (!prev || prev.nodeType!==3) return 1 // Verify textnode.
-  var trailing=/(\s*)$/.exec(prev.data)[1] // trailing whitespace
-  var s=/([ ]*)/.exec(trailing)[1].length // \s at beginning of whitespace
-  if (s) adjustTopMarginOfSublist(sl,s) }
+  var s=spacesAtEndOfTextNode(sl.previousSibling)
+  if (s) adjustTopMarginOfSublist(sl,s) 
+  return 1 }
 
 function adjustTopMarginOfSublist(sl, s){
   sl.style.marginTop=s+'em' }
