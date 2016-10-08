@@ -9,6 +9,8 @@ var log =console.log.bind(console),
     html=doc.documentElement,
     body=doc.body
 
+log(doc)
+log(doc.body)
 log(body)
 
 //querySelector shortcuts:
