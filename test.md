@@ -4,12 +4,9 @@ title: 'Inline formatting 1: box types'
 css:
 - inline0
 - inline1
-js:
-- inline0
-- inline1
 ---
 
-### Inline formatting 1: box types
+### Inline formatting 1: box types 2
 
 A block box comprises one block-width _line box_ per line of inline
 text, without vertical overlapping or gaps.  The block below contains
