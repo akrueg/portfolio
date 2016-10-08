@@ -223,11 +223,10 @@ Having determined that, I hardcoded those fonts into my css:
 - Download kit; extract; open styles.css.
 - use the following css:
 
-<meta c='pre'>
 @font-face {
   font-family: '_nameIPick_{green}';
   src        : url(data:application/font-woff;charset=utf-8;base64,_b64string_{green}) 
-               format('woff' _(or other)_{green}) }
+               format('woff' _(or other)_{green}) } <meta c='pre'>
 
 Base64 encodes binary as text using 64 printable characters: 
 
