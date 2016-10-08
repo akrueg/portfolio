@@ -15,13 +15,6 @@ Having determined that, I hardcoded those fonts into my css:
 - File menu / 'export' new ttf file (as opposed to saving in fontforge's .sfd format).
 - Upload to [FontSquirrel's converter] (http://www.fontsquirrel.com/tools/webfont-generator) 
   with settings:
-  - expert
-  - WOFF (or whatever I want)
-  - hinting: keep existing
-  - vertical: no adjustment (otherwise strips out line gap)
-  - x-height matching: none
-  - subsetting: none (though this works as an alternative to manually clearing
-    unwanted glyphs in fontforge)
   - css: base64 encode
 - Download kit; extract; open styles.css.
 - use the following css:
