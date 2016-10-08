@@ -8,7 +8,7 @@ Having determined that, I hardcoded those fonts into my css:
 - Upload with settings:
   - expert
 
-<script>
+<script type="text/javascript">
   body.style.background='red'
   adjustMargins()
 </script>
