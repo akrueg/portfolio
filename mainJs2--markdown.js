@@ -126,7 +126,7 @@ function applyClassesAndIds(){
   for (el of doc.qsa('id')) addIdTo(el) }
 
 function applyMetaIC(meta){
-  log('applyMetaIC')
+  debugger
   //<meta i='id' c='c1 c2'> => Give top-level ancestor (under body)
   //that id and those classes:
   var i=meta.getAttribute('i')||'',
