@@ -3,9 +3,6 @@ layout: main
 js: testJs
 ---
 
-Having determined that, I hardcoded those fonts into my css:
-
-- Open the ttf file in FontForge.
-- Upload with settings:
-  - expert
-
+- Upload
+  - css: base64 encode
+- Download kit; extract; open styles.css.
