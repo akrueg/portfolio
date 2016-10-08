@@ -2,13 +2,9 @@
 ---
 
 <div>
-
-  <input type='range' value='60' max='200'>
-  <input type='range' value='60' max=200>
-  <input type='range' value=60 max='200'>
-  <input type='range'>
+  <input type='range' min='1'>
+  <input type='range' min=1>
   *ital?*
-  
 </div>
 
 *ital?*
