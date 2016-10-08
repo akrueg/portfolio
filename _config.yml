@@ -1,2 +1,4 @@
-name: siteName5
-markdown: redcarpet
+name: siteName6
+markdown: kramdown
+kramdown:
+  input: kramdown
