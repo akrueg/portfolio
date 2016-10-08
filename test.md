@@ -3,8 +3,6 @@ layout: main
 js: test
 ---
 
-<div>
- x
-</div> 
+a 
 
-y
+b
