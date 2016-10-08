@@ -9,6 +9,8 @@ var log =console.log.bind(console),
     html=doc.documentElement,
     body=doc.body
 
+log(body)
+
 //querySelector shortcuts:
 function qsa(sel){
   var el= (this===win || this===undefined)?doc:this
