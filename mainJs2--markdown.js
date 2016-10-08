@@ -262,6 +262,7 @@ Notes:
 function adjustMargins(){detectSpacesIn(body)}   //Initiate recursion:
 
 function detectSpacesIn(el) {
+debugger
   var s=0
   // Check for non-markdown block:
   if (!(s=spacesAfterClosingTagOf(el)))
