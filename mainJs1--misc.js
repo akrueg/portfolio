@@ -26,7 +26,10 @@ function qsam(s1,s2,el1,el2){
   return q1.filter(el=>!q2.includes(el)) }
 
 //Give everybody an id, so I can do things like query event.target.id:
-win.id='win'; doc.id='doc'; html.id='html';body.id='body'
+win.id='win';
+doc.id='doc';
+html.id='html';
+body.id='body'
 function idOf(el) {return el.id||el.tagName||'unidentifiable'}
 
 //Log html element as js object, not dom node:
