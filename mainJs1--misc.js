@@ -9,12 +9,6 @@ var log =console.log.bind(console),
     html=doc.documentElement,
     body=doc.body
 
-log(doc)
-logj(doc)
-log(doc.body)
-log(document.body)
-log(body)
-
 //querySelector shortcuts:
 function qsa(sel){
   var el= (this===win || this===undefined)?doc:this
@@ -32,10 +26,7 @@ function qsam(s1,s2,el1,el2){
   return q1.filter(el=>!q2.includes(el)) }
 
 //Give everybody an id, so I can do things like query event.target.id:
-win.id='win';
-doc.id='doc';
-html.id='html';
-body.id='body'
+win.id='win'; doc.id='doc'; html.id='html'; body.id='body'
 function idOf(el) {return el.id||el.tagName||'unidentifiable'}
 
 //Log html element as js object, not dom node:
