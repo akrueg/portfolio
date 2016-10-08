@@ -135,9 +135,13 @@ function applyMetaIC(meta){
   while (par && par.parentElement!==body) par=par.parentElement
   if (!par.id && i) par.id=i 
   if (c) for (var cl of c.split(' ')) par.classList.add(cl) 
+  // Remove <meta> and space before it, so that space doesn't get
+  // counted toward margins; put margin-signalling spaces after <meta>:
+  var sib=meta.previousSibling
+  if (sib && sib.nodeType===3){
+    var s=/([ ]*)$/.exec(sib.data)[1].length // num \s at end
+    if (s) sib.data=sib.data.slice(0,-s) }
   meta.parentElement.removeChild(meta) }
-
-
 
 // Using custom <cl> tag with custom attributes a, b, etc (<cl a b>):
 // for el containing <cl>: add classes a, b, etc.
