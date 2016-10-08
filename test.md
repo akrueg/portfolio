@@ -4,6 +4,7 @@ title: 'Inline formatting 1: box types'
 css:
 - inline0
 - inline1
+js: test
 ---
 
 ### Inline formatting 1: box types 2
