@@ -1,9 +1,6 @@
 'use strict'
-
 standardInit()
 inlineFormattingInit()
-//scrollToEl('18v')
-var refresh=111111
 
 // example 1
 bindCheck(Ctr01chkS2Display,Ex01s2,'display','inline-block','inline')
