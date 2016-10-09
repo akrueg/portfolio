@@ -1,6 +1,6 @@
 ---
 layout: main
-title: 'Inline formatting 2.1: '
+title: 'Inline formatting 2.1: line-height'
 css:
 - inline0
 - inline21
@@ -8,3 +8,156 @@ js:
 - inline0
 - inline21
 ---
+
+<h3>Inline formatting 2.1: line-height</h3>
+
+<p>The height of each inline box is determined by its line-height and possibly its 
+font-size, depending on the value used for line-height, which can be:</p>
+
+<ul>
+<li><p>keyword &#39;normal&#39;, which it inherits by default: inline box height is based on 
+font metrics (see below)</p></li>
+<li><p>an absolute value: 40px / 40pt, which overrides / ignores font-size</p></li>
+<li><p>a unitless scalar multiple of font-size: {font-size: 40px; line-height:
+<em>1.5</em>{blue}} =&gt; inline box height = <em>60px</em>{blue}</p></li>
+<li><p>a font-unit multiple of font-size: {fs: 40px; lh:  <em>1.5em</em>{blue}} =&gt;
+<em>60px</em>{blue}  (font-units ex and ch vary by font, as described below)</p></li>
+<li><p>a percentage of font-size: {fs: 40px; lh: <em>150%</em>{blue}} =&gt; <em>60px</em>{blue}</p></li>
+</ul>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- NOTE: PX & PT -----------------------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<div class='discloseC mdCaptureStart'></div>
+
+<p><strong>Definition of px</strong></p>
+
+<p>Physical pixels: Making the best hand measurement I can perform, holding 
+a flexible, transparent ruler up to screen: 10&quot; on my screen is 865px =&gt; 
+86.5 ppi.  Vertical measurement conforms to horizontal =&gt; square pixels.<br>
+Screen resolution is at max = 1280x1024, which suggests a screen 14.80&quot; x 
+11.84&quot;, diagonal 18.95&quot;.  I don&#39;t have the specs for this (2nd-hand) 
+monitor, but it shows up in the hardware list as &#39;Dell 19-inch,&#39; which 
+tallies.</p>
+
+<p>According to <a href="https://drafts.csswg.org/css-values-3/#absolute-lengths">the spec</a>,
+css anchors the definitions of all units to the &#39;logical pixel&#39;, which 
+assumes 96ppi: 1&quot; = 96px.  (I think that applies to display devices, 
+while printers have a separate logic.)  Confirmation: the (real-world) 
+definition of 1pt is 1/72&quot;; a square of side 72pt is exactly 96px on my 
+screen:</p>
+
+<div id='dInch1'> 1in</div>
+
+<div id='dInch2'>72pt</div>
+
+<div id='dInch3'>96px</div>
+
+<p>Confirmation in the other direction: I measure the 1in square as 28mm; 
+the physical size on my screen of 1 logical inch predicted by my &#39;best 
+measurement&#39; above is</p>
+
+<p>1 logical in<br>
+* 96 log px / log in<br>
+* 1 device px / log px<br>
+* 1 real in / 86.5 dev px<br>
+* 25.4 mm / real in<br>
+= 28.2mm</p>
+
+<p>I&#39;m grateful to <a href="https://omnicognate.wordpress.com/2013/01/07/in-css-px-is-not-an-angular-measurement-and-it-is-not-non-linear">this blog post</a>
+for debunking some very misleading assertions.  According to it, a 
+&#39;reference pixel&#39; is defined by the spec as a pixel in a 96ppi screen.<br>
+In a device other than a screen (the post cites &#39;futuristic eyewear&#39; &amp; 
+&#39;a massive display wall&#39;), a reference pixel is a square that subtends 
+the same visual angle as a 96ppi screen seen at a nominal arm&#39;s length 
+of 28&quot; - an image 100x100 reference px would appear the same size (occupy 
+the same proportion of / angle in my field of vision) on each device.</p>
+
+<p>According to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-webkit-device-pixel-ratio">MDN</a>,
+the browser queries the device&#39;s pixel density and sets a logical pixel 
+equal to the nonzero integer number of device pixels that creates an area 
+as close as possible to the reference pixel.  On my screen, that&#39;s 1 
+device pixel: 1 is the integer closest to 86.5/96.  A high-density screen 
+might be 2 or 3 dexive pixels / logical pixel.</p>
+
+<p>I believe this is also what&#39;s happening when I use Chromium or linux to 
+zoom in: the number of device pixels per logical pixel is increased.  <a href="https://mindtheshift.wordpress.com/2015/04/02/r-i-p-rem-viva-css-reference-pixel">This post</a>
+does a great job differentiating (a) browser text-zooming via changing 
+root font-size from (b) browser zooming via changing logical pixel size.</p>
+
+<div class='mdCaptureEnd'></div>
+
+<p>Below, the inline boxes are affected by </p>
+
+<ul>
+<li>font metrics / font family</li>
+<li>font-size</li>
+<li>line-height.</li>
+</ul>
+
+<p>Line box is affected by </p>
+
+<ul>
+<li>strut (span 1)</li>
+<li>inline box heights</li>
+<li>inline box vertical-align values (discussed later); span 2 is initially 
+{vertical-align: 10px}: </li>
+</ul>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- EXAMPLE 1 ----------------------------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<p id='Ex01' class='exhibit'>
+  <span id='Ex01s1'>1</span>
+  <span id='Ex01s2'>2</span>
+</p>
+
+<table><thead>
+<tr>
+<th><code>&lt;p&gt;</code></th>
+<th><meta i='Ctr01' c='controls'></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>font-family:</td>
+<td><input  id='Ctr01txt1' value='DejaVu Sans'></td>
+</tr>
+<tr>
+<td>font-size:</td>
+<td><input  id='Ctr01txt2' value='50px'></td>
+</tr>
+<tr>
+<td>line-height:</td>
+<td><input  id='Ctr01txt3'></td>
+</tr>
+<tr>
+<td><code>&lt;span&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>font-family:</td>
+<td><input  id='Ctr01txt4'></td>
+</tr>
+<tr>
+<td>font-size:</td>
+<td><input  id='Ctr01txt5'></td>
+</tr>
+<tr>
+<td>line-height:</td>
+<td><input  id='Ctr01txt6'></td>
+</tr>
+<tr>
+<td>vertical-align:</td>
+<td><select id='Ctr01sel1'></select></td>
+</tr>
+<tr>
+<td></td>
+<td><input  id='Ctr01txt7' value='10px'></td>
+</tr>
+</tbody></table>
