@@ -26,7 +26,7 @@ function qsam(s1,s2,el1,el2){
   return q1.filter(el=>!q2.includes(el)) }
 
 //Give everybody an id, so I can do things like query event.target.id:
-win.id='win'; doc.id='doc'; html.id='html'; body.id='body'
+win.id='win'; doc.id='doc'; html.id='html';body.id='body'
 function idOf(el) {return el.id||el.tagName||'unidentifiable'}
 
 //Log html element as js object, not dom node:
@@ -55,6 +55,7 @@ function trimWs(s){
                /(?=\s*$)/)  // followed by (don't include) final whitespace.
   var match=rx.exec(s)
   return match?match[0]:'' }
+var trimWS=trimWs // I keep forgetting which I named it; allow both.
 
 function getCssRule(selectorText){
   for (var sheet of Array.from(doc.styleSheets))
@@ -93,6 +94,15 @@ function newEl(tag, id, classes, text, child1orArray, child2etc){
                 : Array.from(arguments).slice(4)
     for (var ch of children) el.appendChild(ch) }
   return el }
+
+function addChild(parent, child){
+  if (typeof child==='string') child=doc.createElement(child)
+  parent.appendChild(child)
+  return child }
+
+function addText(el,text){
+  var tn=doc.createTextNode(text)
+  el.appendChild(tn) }
 
 function setRange(el, min, max, val, step){
   el.type='range'; el.min=min; el.max=max; el.value=val; el.step=step 
@@ -144,7 +154,25 @@ function parseUrl(s){
             /(.*)/       ) 
   match=rx.exec(s)
   url.path=match[1]; url.resource=url.page=match[2] 
+  var fileName=parseFileName(url.page)
+  url.pageNoExt=fileName.noExt
+  url.pageExt=fileName.ext
   return url }
+
+function parseFileName(s){
+  var rx=newRx( /(.*.(?=\.)|.*)/ ,  // Capture all before last .
+              // (         |  )          Capture either of the following:
+              //  .*.(?=\.)              - all + any followed by .
+              //  .*                       all
+              //    .                            any
+              //     (?=\.)                          followed by .
+              //            .*           - If that fails because there's no .
+              //                           capture whole string
+                /\.?/            ,  // Discard (match but don't capture) 
+              //                       last . if there was one.
+                /(.*)/           ), // Capture all after last . if there was one.
+      match=rx.exec(s)
+  return {noExt:match[1], ext:match[2]} }
 
 
 /*************************************************************************************/
