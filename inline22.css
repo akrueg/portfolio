@@ -1,6 +1,6 @@
-.parallel,.parallel2{font-weight:bold     }
-.parallel{           color      :limegreen}
-.parallel2{          color      :fuchsia  }
+.parallel, .parallel2{font-weight:bold     }
+.parallel{            color      :limegreen}
+.parallel2{           color      :fuchsia  }
 
 /* example 1 */
 #Ex01{              position    :relative    }
@@ -74,6 +74,11 @@ and even at lh:normal, inline box <> content box because this is freeserif,
 which has a line-gap. */
 
 /* example 7 */
+.Disc07s1,.Disc07s2,.Disc07s3{font-weight:bold}
+.Disc07s1{background    :peru      }
+.Disc07s2{background    :pink      }
+.Disc07s3{background    :#ffff80      }
+
 #Ex07d1{            position      :relative     }
 #Ex07p1{            line-height   :1em          }
 #Ex07p1{            margin        :20px 0 40px 0} 
