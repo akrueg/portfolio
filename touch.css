@@ -67,15 +67,10 @@ body{max-width:30em}
 
 /* Options/Notes sections: */
 #sliFS{width:6em   } /* Compress it horizonally a bit. */
-
-
-
-
-
-
-
-
-
+#struckOut{     text-decoration:line-through;
+                color          :red         }
+#struckOut span{text-decoration:underline   ;
+                color          :blue        }
 
 
 
