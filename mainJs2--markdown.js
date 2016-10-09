@@ -393,10 +393,10 @@ function handleSublistCase(el) {
   var s=spacesAtEndOfTextNode(sl.previousSibling)
   if (s) adjustTopMarginOfSublist(sl,s) 
   return 1 }
-
+  
 function adjustTopMarginOfSublist(sl, s){
   sl.style.marginTop=s+'em' }
-
+  
 function adjustBottomMarginOf(el, s){ // and possibly top margin of next el.
 // Meaning of number of spaces depends on the two elements' default interaction:
 // Where default is 1 or 2em margin, 1 or 2 spaces signals no margin
