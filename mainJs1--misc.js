@@ -10,11 +10,14 @@ var log =console.log.bind(console),
     body=doc.body
 
 //querySelector shortcuts:
+doc.qsa=Element.prototype.qsa=qsa
 function qsa(sel){
-  var el= (this===win || this===undefined)?doc:this
+  var el= (!this || this===win)? doc : this
   return Array.from(el.querySelectorAll(sel)) }
-doc.qsa=qsa //.bind(doc)
-Element.prototype.qsa=qsa //.bind(Element.prototype)
+doc.qs=Element.prototype.qs=qs
+function qs(sel){
+  var el= (!this || this===win)? doc : this
+  return el.querySelector(sel) }
 
 //qsa minus - first query minus second
 //eg: <a> not contained in <section>: qsam('a','section a')
