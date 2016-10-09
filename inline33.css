@@ -1,0 +1,123 @@
+.formula{      white-space    :normal   }
+
+/* example 1 */
+#Ex01{         position       :relative }
+#Ex01p{        font-family    :tf,dj    ;
+               font-size      :128px    ;
+               margin         :1.5rem 0 ;
+               background     :lightblue;
+               line-height    :1        ;
+               pointer-events :none     }
+#Ex01 span{    background     :#40bf77}
+#Ex01markers p{height         :1em;
+               width          :1em;
+               border-radius  :.5em;
+               display        :flex;
+               justify-content:center;
+               align-items    :center;
+               font-family    :sans-serif;
+               background     :fuchsia;
+               background     :#ffff80;
+               position       :absolute}
+#Ex01marker1{  left:  2px; top:  2px}
+#Ex01marker2{  left:  7px; top: 57px}
+#Ex01marker3{  left:  2px; top:112px}
+#Ex01marker4{  left:110px; top: -5px}
+#Ex01marker5{  left:110px; top:117px}
+
+/* example 2 */
+#Ex02{         position    :relative ;
+               margin      :1em 0    }
+#Ex02p1{       font-family :tf       ;
+               font-size   :128px    ;
+               line-height :1        ;
+               background  :lightblue;
+               padding-left:40px     }
+/* Bars: */
+#Ex02markers 
+div div{       position:absolute     ;
+               width:20px            }
+#Ex02markersD{ display:none          }
+#Ex02markerA1{ left:20px;top:  0px;height: 64px;background:royalblue}
+#Ex02markerA2{ left:20px;top: 64px;height: 44px;background:lime     }
+#Ex02markerA3{ left: 0px;top:  0px;height:108px;background:red      }
+#Ex02markerD1{ left: 0px;top:108px;height: 30px;background:lime     }
+#Ex02markerD2{ left:20px;top:128px;height: 10px;background:royalblue}
+#Ex02markerD3{ left:20px;top:108px;height: 20px;background:red      }
+/* Calculations: */
+#Ex02lblsD{    display    :none   }
+#Ex02lbls p{   margin     :0      ;
+               display    :flex   ;
+               line-height:1.5    }
+/* ^ The D calculations are 1 line shorter, so I added a blank line,
+   so switching between A & D doesn't shift the following text;
+   except it was still shifting it a tiny amount, because the presence
+   of <sub> spans was making the computed line-heights uneven at
+   line-height:normal (default).  So set that absolutely.
+   A little more line height is nice for calcultions, anyway. */
+.rSq:before, .bSq:before, 
+.gSq:before {  content    :'\25A0'}
+.rSq{color:red} .bSq{color:royalblue} .gSq{color:lime}
+#Ex02see{      color      :grey   }
+
+#Ex02tbl{                        color         :brown          }
+#Ex02tbl td{                     padding-right :.5em           }
+#Ex02tbl tr:nth-of-type(3n-2){   font-weight   :bold           }
+#Ex02tbl tr:nth-of-type(3n-2) td{border-bottom :1px solid black}
+#Ex02tbl tr:nth-of-type(3n){     color         :black          }
+#Ex02tbl tr:nth-of-type(3) td{   padding-bottom:.5em           }
+
+/* Example 3: */
+#Ex03p1{       font-family:dj       ;
+               background :lightblue;
+               font-size  :100px    }
+#Ex03p1 span{  background :#40bf77  }
+
+/* example 4 */
+#Ex04{         position   :relative }
+#Ex04p1{       font-size  :100px    ;
+               background :lightblue}
+#Ex04s1{       background :#40bf77  ;
+               margin-left:40px     }
+#Ex04marker1,#Ex04marker2,
+#Ex04marker3{  position   :absolute ;
+               width      :20px     }
+#Ex04marker1{  left:40px; top:  0px; height:120px; background:lime}
+#Ex04marker2{  left:60px; top:  5px; height:110px; background:blue}
+#Ex04marker3{  left:60px; top:115px; height:  5px; background:red }
+#Ex04lbls p{   margin     :0        ;
+               display    :flex     }
+#Ex04lbls .bSq{color      :blue     }
+
+/* example 5 */
+#Ex05{         position   :relative ;
+               font-size  :100px    ;
+               font-family:dj       }
+#Ex05p{        background :lightblue;
+               line-height:1ex      ;
+               margin     :2.5rem 0 }
+#Ex05bounding{ position   :absolute;
+               left:2px; width :54px;
+               top :6px; height:55px;
+               border     :2px dashed red  ;
+               display    :none            }
+#Ex05em{       position   :absolute        ;
+               left: 59px; width:  58px;
+               top :-24px; height:101px;
+               border     :2px dashed brown;
+               display    :none            }
+#Ex05s1{       font-family:tf              ;
+               display    :none            }
+
+/* example 6 */
+#Ex06{font-family:dj       ;
+      font-size  :50px     ; 
+      background :lightblue;
+      width      :1ch      }
+
+
+
+
+
+
+
