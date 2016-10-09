@@ -205,7 +205,7 @@ unintended consequence of styling by tag-name, span{fs:1.25em}:</p>
 ---------------------------------------------------------------------
 -------------------------------------------------------------------->
 
-<div class='discloseC mdCaptureStart'></div>
+<div class='disclose C mdCaptureStart'></div>
 
 <p><strong>Note about display</strong></p>
 
@@ -221,25 +221,27 @@ constrained to 1em; innermost span is {vertical-align: bottom}.</p>
 
 <ul>
 <li><p>1st span&#39;s inline box not shown explicitly 
-(<label>show</label> <input type='checkbox' id='Ex07chk1'>). It&#39;s the height 
+(<label>show</label> <input type='checkbox' id='Ctr07chk1'>). It&#39;s the height 
 of the pink &amp; brown boxes.  The actual yellow <em>line</em> box shown goes from the 
 bottom of 1st span&#39;s inline box to top of 2nd span&#39;s pink inline box.</p></li>
 <li><p>2nd span&#39;s pink inline box is elevated because this span has greater font-size 
 while being baseline-aligned with 1st span.</p></li>
-<li><p><em>3rd <code>&lt;span&gt;</code>&#39;s</em>{.Disc07s1} inline box bottom-aligned with <em>2nd <code>&lt;span&gt;</code></em>{.Disc07s2}, since it&#39;s
-inline-block and creates its own block formatting context.</p></li>
+<li><p><em>3rd <code>&lt;span&gt;</code>&#39;s</em>{.Ctr07s1} inline box bottom-aligned with 
+<em>2nd <code>&lt;span&gt;</code></em>{.Ctr07s2}, since it&#39;s inline-block and creates its own block 
+formatting context.</p></li>
 </ul>
 
-<p>When 2nd span is inline:</p>
+<p>When 2nd span is <label>inline</label> <input id='Ctr07chk2' type='checkbox'>:</p>
 
 <ul>
 <li><p>Green background now fills <em>content</em> box of 2nd span;
 inline box no longer shown explicitly 
-(<label>show</label> <input type='checkbox' id='Ex07chk2'>).</p></li>
-<li><p>2nd span no longer creates a block formatting context; <em>3rd <code>&lt;span&gt;</code></em>{.Disc07s1}, even 
+(<label>show</label> <input type='checkbox' id='Ctr07chk3'>).</p></li>
+<li><p>2nd span no longer creates a block formatting context; <em>3rd <code>&lt;span&gt;</code></em>{.Ctr07s1}, even 
 though nested in 2nd, now ignores 2nd inline box&#39;s bottom and bottom-
-aligns itself with <em>1st <code>&lt;span&gt;</code></em>{.Disc07s3} (or if that were inline, with 
-the containing <code>&lt;p&gt;</code>):</p></li>
+aligns itself with <em>1st <code>&lt;span&gt;</code></em>{.Ctr07s3} 
+(<label>reveal</label> <input id='Ctr07chk4' type='checkbox'>) - 
+or if that were inline, with  the containing <code>&lt;p&gt;</code>:  </p></li>
 </ul>
 
 <!-------------------------------------------------------------------
@@ -262,10 +264,6 @@ the containing <code>&lt;p&gt;</code>):</p></li>
  --><span id='Ex07p1s5'>x</span>
   </p>
 </div>  
-
-<p class='controls'>2nd span:
-  <select id='Ctr07sel1' data-opts='inline,*inline-block'></select>
-</p>
 
 <div class='mdCaptureEnd'></div>
 
