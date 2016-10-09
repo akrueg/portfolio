@@ -74,10 +74,10 @@ and even at lh:normal, inline box <> content box because this is freeserif,
 which has a line-gap. */
 
 /* example 7 */
-.Disc07s1,.Disc07s2,.Disc07s3{font-weight:bold}
-.Disc07s1{background    :peru      }
-.Disc07s2{background    :pink      }
-.Disc07s3{background    :#ffff80      }
+.Ctr07s1,.Ctr07s2,.Ctr07s3{font-weight:bold}
+.Ctr07s1{background    :peru      }
+.Ctr07s2{background    :pink      }
+.Ctr07s3{background    :#ffff80      }
 
 #Ex07d1{            position      :relative     }
 #Ex07p1{            line-height   :1em          }
