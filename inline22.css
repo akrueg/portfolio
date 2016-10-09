@@ -1,3 +1,5 @@
+/* CP _DoFullRefresh */
+
 .parallel, .parallel2{font-weight:bold     }
 .parallel{            color      :limegreen}
 .parallel2{           color      :fuchsia  }
@@ -97,8 +99,6 @@ which has a line-gap. */
                     line-height   :1em          }
 #Ex08p1s1{          font-size     :3em          ;
                     line-height   :1em          }
-
-
 
 
 
