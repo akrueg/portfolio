@@ -1,7 +1,5 @@
 standardInit()
 inlineFormattingInit()
-//scrollToEl('18 5 2 1v')
-var refresh=11111
 
 // example 1
 bindSelect(Ctr01sel1,Ex01p1  ,'lineHeight',true)
@@ -18,17 +16,14 @@ bindCheck(Ex06chk1,Ex06s3,'background','pink'        ,'unset')
 
 // example 7
 bindCheck(Ctr07chk1,Ex07p1s5,'display'   ,'inline-block','' )  
-var lg='linear-gradient(to top right,'
-                      +'#40bf77,'
-                      +'#40bf77 20%,'
-                      +'transparent 45%,'
-                      +'transparent 65%,'
-                      +'#40bf77 80%,'
-                      +'#40bf77)'
+
+var grad='radial-gradient(2em 1.2em at 50% 100%,'
+        +'transparent 45%, #40bf77 55%)'
+
 Ctr07chk2.onclick=()=>{
   if (Ctr07chk2.checked){
     Ex07p1s2.style.display='inline'
-    Ex07p1s2.style.background=Ctr07chk4.checked? lg : '#40bf77' }
+    Ex07p1s2.style.background=Ctr07chk4.checked? grad : '#40bf77' }
   else {
     Ex07p1s2.style.display=Ex07p1s2.style.background='' }}
 
@@ -38,7 +33,7 @@ Ctr07chk4.onclick=()=>{
   if (Ctr07chk4.checked){
     Ctr07chk2.checked=true
     Ex07p1s2.style.display='inline'
-    Ex07p1s2.style.background=lg }
+    Ex07p1s2.style.background=grad }
   else {
     if (Ctr07chk2.checked) Ex07p1s2.style.background='#40bf77' }}
 
