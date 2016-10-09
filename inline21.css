@@ -1,3 +1,7 @@
+.parallel,.parallel2{font-weight:bold     }
+.parallel{           color      :limegreen}
+.parallel2{          color      :fuchsia  }
+
 /* example 1 */
 #Ex01{         background :lightblue   ;
                white-space:nowrap      ;
