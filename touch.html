@@ -298,12 +298,15 @@ motion.</p></li>
 
 <p><strong>Responsiveness</strong></p>
 
-<p>The movement of the circular markers on this page seems to be as responsive as in
-<a href="https://googlesamples.github.io/web-fundamentals/samples/fundamentals/design-and-ui/input/touch/touch-demo-2.html">this example</a> from this <a href="https://developers.google.com/web/fundamentals/design-and-ui/input/touch/touch-events">Google tutorial</a> when I uncheck the options above:
-don&#39;t log text, evaluate gestures, or filter motion.  With all those engaged,
-it&#39;s a little less responsive.  When it&#39;s synced with a Chrome DevTools tab on my desktop
-(via DevTools / Inspect Devices), it&#39;s much less responsive.  requestAnimationFrame 
-doesn&#39;t seem to offer any improvement.</p>
+<p>The movement of the circular markers on this page seems to be as 
+responsive as in <span id='struckOut'><span>this example</span></span> 
+from this <a href="https://developers.google.com/web/fundamentals/design-and-ui/input/touch/touch-events">Google tutorial</a> <em>(that&#39;s disappointing: they replaced 
+the live / interactive examples with looping animations showing how 
+the live examples used to work)</em>{grey} when I uncheck the options above:
+don&#39;t log text, evaluate gestures, or filter motion.  With all those 
+engaged, it&#39;s a little less responsive.  When it&#39;s synced with a Chrome 
+DevTools tab on my desktop (via DevTools / Inspect Devices), it&#39;s much 
+less responsive.  requestAnimationFrame doesn&#39;t seem to speed it up.</p>
 
 <p>However, I&#39;m stumped in my attempt to <em>measure</em> / <em>quantify</em> responsiveness.
 Every observation I make via js is &#39;taking the DOM&#39;s word for it.&#39;  Example:
