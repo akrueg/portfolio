@@ -1,3 +1,5 @@
 ## Resume & Web Portfolio of Andy Krueger
 
-Please see [homepage](https://akrueg.github.io/portfolio/) on GitHub Pages.
+Please see
+<a href='https://akrueg.github.io/portfolio/' target='_blank'>homepage</a>
+on GitHub Pages.
