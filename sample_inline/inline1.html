@@ -11,9 +11,10 @@ js:
 
 <h3>Inline formatting 1: box types</h3>
 
-<p>A block box comprises one block-width <em>line box</em> per line of inline
-text, without vertical overlapping or gaps.  The block below contains
-2 line boxes: </p>
+<p>A block box with text generates a &#39;block formatting context&#39; and contains 
+one block-width _<strong><em>line box</em></strong>_ per line of inline text, without vertical 
+overlapping or gaps.  The block below contains 2 light-blue line boxes 
+with no visible boundary between them: </p>
 
 <!-------------------------------------------------------------------
 ---------------------------------------------------------------------
@@ -21,24 +22,26 @@ text, without vertical overlapping or gaps.  The block below contains
 ---------------------------------------------------------------------
 -------------------------------------------------------------------->
 
-<p id='Ex01' class='exhibit'>
-  <span id='Ex01s1'>aaaaa</span>
-  <span id='Ex01s2'>bbbbb bbbbb bbbbb bbbbb</span>
-  <span id='Ex01s3'>ccccc</span>
-</p>
+<div id='Ex01' class='exhibit'>
+  <p>
+    <span id='Ex01s1'>aaaaa</span>
+    <span id='Ex01s2'>bbbbb bbbbb bbbbb bbbbb</span>
+    <span id='Ex01s3'>ccccc</span>
+  </p>
+</div>
 
-<p>Block &#39;formatting contexts&#39; can be nested. If the b-span above is
+<p>Block formatting contexts can be nested. If the b-<code>&lt;span&gt;</code> above is
 <label>inline-block</label> <input id='Ctr01chkS2Display' type='checkbox'>, 
-it contains 2 (green) line boxes, while the <code>&lt;p&gt;</code> contains only 1 
-(blue) line box.</p>
+it contains 2 (green) line boxes, while the surrounding <code>&lt;p&gt;</code> contains 
+only 1 (blue) line box.</p>
 
 <p>Visualizing the individual line boxes is a challenge.  There&#39;s no obvious 
-way to see that the line boxes above have unequal heights due to the spans&#39; 
+way to see that the line boxes above have unequal heights due to the <code>&lt;span&gt;</code>s&#39; 
 different line-heights (<label>show partially</label> 
-<input id='Ctr01chkS3Display' type='checkbox'>, using a hack described below).<br>
+<input id='Ctr01chkS3Display' type='checkbox'>, using a hack described below).
 The boxes illustrated by setting the {background} of an inline element 
-(green) are <em>content boxes</em> and do not affect line box height; each inline 
-element also generates an unstylable (sans hack) <em>inline box</em> (pink) that 
+are _<strong><em>content boxes</em></strong>_ (green) and do not affect line box height; each inline 
+element also generates an unstylable (sans hack) _<strong><em>inline box</em></strong>_ (pink) that 
 governs the line boxes.</p>
 
 <p>In the example below:</p>
