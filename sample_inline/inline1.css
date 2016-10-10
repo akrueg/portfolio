@@ -1,9 +1,11 @@
 /* example 1 */
-#Ex01{         background :lightblue;
-               width      :11em     }
-#Ex01  span{   background:#40bf77   }
-#Ex01s1{       line-height:3        }
-#Ex01s2{       width      :6em      }
+#Ex01 {        height       :4.3em    ;
+               margin-bottom:1em      }
+#Ex01 p{       background   :lightblue;
+               width        :11em     }
+#Ex01 span{    background   :#40bf77  }
+#Ex01s1{       line-height  :3        }
+#Ex01s2{       width        :6em      }
 
 /* example 2 */
 #Ex02{         background :lightblue;
