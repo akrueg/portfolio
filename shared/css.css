@@ -1,4 +1,3 @@
-body{background:yellow}
 *      {margin         :0            ;
         padding        :0            ;
         box-sizing     :border-box   }
@@ -48,7 +47,6 @@ input[type=checkbox]{transform:translate(0,.1em)}
 input[type=range   ]{height:.8em}
 
 @media                  (min-resolution :120dpi        ) {
-body{background:pink}
 html                    {font-size      :1.3em         } 
 input[type=checkbox]    {transform      :scale(1.4,1.4)}
 input[type=radio   ]    {transform      :scale(1.6,1.6);
