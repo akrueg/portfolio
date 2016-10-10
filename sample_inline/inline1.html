@@ -1,0 +1,430 @@
+---
+layout: main
+title: 'Inline formatting 1: box types'
+css:
+- sample_inline/shared/css
+- sample_inline/inline1
+js:
+- sample_inline/shared/js
+- sample_inline/inline1
+---
+
+<h3>Inline formatting 1: box types</h3>
+
+<p>A block box comprises one block-width <em>line box</em> per line of inline
+text, without vertical overlapping or gaps.  The block below contains
+2 line boxes: </p>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- EXAMPLE 1 ---------------------------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<p id='Ex01' class='exhibit'>
+  <span id='Ex01s1'>aaaaa</span>
+  <span id='Ex01s2'>bbbbb bbbbb bbbbb bbbbb</span>
+  <span id='Ex01s3'>ccccc</span>
+</p>
+
+<p>Block &#39;formatting contexts&#39; can be nested. If the b-span above is
+<label>inline-block</label> <input id='Ctr01chkS2Display' type='checkbox'>, 
+it contains 2 (green) line boxes, while the <code>&lt;p&gt;</code> contains only 1 
+(blue) line box.</p>
+
+<p>Visualizing the individual line boxes is a challenge.  There&#39;s no obvious 
+way to see that the line boxes above have unequal heights due to the spans&#39; 
+different line-heights (<label>show partially</label> 
+<input id='Ctr01chkS3Display' type='checkbox'>, using a hack described below).<br>
+The boxes illustrated by setting the {background} of an inline element 
+(green) are <em>content boxes</em> and do not affect line box height; each inline 
+element also generates an unstylable (sans hack) <em>inline box</em> (pink) that 
+governs the line boxes.</p>
+
+<p>In the example below:</p>
+
+<ul>
+<li><p>The content &amp; inline boxes are vertically centered.</p></li>
+<li><p>Inline box height is affected by line-height, whereas</p></li>
+<li><p>content box height is a fixed function of font-size and font metrics,
+defined later.</p></li>
+<li><p>Line box height is based on inline box height as well as height of invisible 
+<em>strut</em> (<label>visualize</label> <input id='Ctr02chkStrut' type='checkbox'>), 
+a virtual / 0-width inline element inheriting all styles
+from container, including in this case {font-size: 80px}.  It provides a minimum 
+height for line box - propping it up like a wooden &#39;strut&#39;.</p></li>
+<li><p>At {line-height: normal}</p>
+
+<ul>
+<li>in <input id='Ctr02optFontFamily1' type='radio' name='Ctr02optFontFamily_' checked>
+<label>FreeSerif  </label>, inline box is slightly larger than content box;</li>
+<li>in <input id='Ctr02optFontFamily2' type='radio' name='Ctr02optFontFamily_'>
+<label>DejaVu Sans</label> (and most other fonts I examined), they&#39;re equal.</li>
+</ul></li>
+</ul>
+
+<p>This small difference is easier to see <label>without the strut</label>
+<input id='Ctr02chkNoStrut' type='checkbox'> (making its font-size &lt;= 
+a-span&#39;s font-size):</p>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- EXAMPLE 2 ---------------------------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<p id='Ex02' class='exhibit'>
+  <span id='Ex02s1'>s</span><span id='Ex02s2'>a</span>
+</p>
+
+<div class='controls'>
+    <div id='Ctr02d1'>Visualize: 
+       <p id='Ctr02p1'>
+         <input id='Ctr02optDisplay1' type='radio' name='Ctr02optDisplay_' checked>
+         <label id='Ctr02optDisplay1lbl'>content box</label><br>
+         <input id='Ctr02optDisplay2' type='radio' name='Ctr02optDisplay_'>
+         <label id='Ctr02optDisplay2lbl'>inline box</label>
+       </p> 
+     </div>
+    <p>Line-height: <input id='Ctr02chkLineHeight' type='checkbox' checked> 
+       <label>normal</label></p>
+    <p>0
+      <span id='Ctr02spTriangles'>
+        <input id='Ctr02slider1' type='range' value='60' max='200'>
+        <span>&#9650;</span>
+        <span>&#9650;</span>
+      </span>
+      200px
+    </p>
+    <p id='Ctr02p2'><input id='Ctr02optPx1' name='Ctr02optPx_' type='radio'> <label>74px </label>&nbsp;&nbsp;
+                    <input id='Ctr02optPx2' name='Ctr02optPx_' type='radio'> <label>75px </label>&nbsp;&nbsp;
+                    <input id='Ctr02optPx3' name='Ctr02optPx_' type='radio'> <label>76px </label>&nbsp;&nbsp;
+                    <input id='Ctr02optPx4' name='Ctr02optPx_' type='radio'> <label>117px</label>&nbsp;&nbsp;
+                    <input id='Ctr02optPx5' name='Ctr02optPx_' type='radio'> <label>118px</label>&nbsp;&nbsp;
+                    <input id='Ctr02optPx6' name='Ctr02optPx_' type='radio'> <label>119px</label></p> 
+</div>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- NOTE: RULER -------------------------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<div class='discloseC mdCaptureStart minorNote'></div>
+
+<p>Ruler</p>
+
+<p>Click to <input id='btnRuler' type='button' value='show'>.  It&#39;s less
+useful than I thought it would be, but here it is anyway.  Drag to use 
+with this or later example.  Position is :fixed; double-click it to hide.
+Click button above to re-show.</p>
+
+<section>
+<div id='ruler'><div class='rGrey'>0px</div><div class='r100'></div>
+<!--  1- 10--><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r10' ></div>
+<!-- 11- 20--><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r20' ></div>  
+<!-- 21- 30--><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r10' ></div>
+<!-- 31- 40--><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r20' ></div>  
+<!-- 41- 50--><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r2' ></div><div class='rW1'></div><div class='r50' ></div>  
+<!-- 51-100--><div class='rW9'></div><div class='r10'></div><div class='rW9'></div><div class='r20'></div><div class='rW9'></div><div class='r10'></div><div class='rW9'></div><div class='r20'></div><div class='rW9'></div><div class='r100'></div>
+<!--101-150--><div class='rW9'></div><div class='r10'></div><div class='rW9'></div><div class='r20'></div><div class='rW9'></div><div class='r10'></div><div class='rW9'></div><div class='r20'></div><div class='rW9'></div><div class='r50' ></div>
+<!--151-200--><div class='rW9'></div><div class='r10'></div><div class='rW9'></div><div class='r20'></div><div class='rW9'></div><div class='r10'></div><div class='rW9'></div><div class='r20'></div><div class='rW9'></div><div class='r100'></div>
+<div class='rGrey'>200px</div></div>
+</section>
+
+<div class='mdCaptureEnd'></div>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- NOTE: FONTS USED --------------------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<div class='discloseC mdCaptureStart minorNote'></div>
+
+<p>Fonts used</p>
+
+<p>Initially, I found myself working with these fonts due to the following mechanisms:
+Chromium (hamburger button / settings / show advanced / web content / customize fonts)
+allows me to set &#39;standard&#39;, &#39;serif&#39;, &#39;sans-serif&#39;, &amp; &#39;fixed width&#39; (monospace)
+defaults.  The last three are used when I set font-famly to the keywords (without 
+quotes) serif, sans-serif, &amp; monospace; the first is used when I don&#39;t specify a
+font or use an invalid value.  My settings were <em>FreeSerif</em>{green}, Droid Serif, Droid Sans,
+&amp; Droid Mono (I had tinkered with these earlier; I don&#39;t know what they were when I
+installed chromium).  Hence my use of FreeSerif.</p>
+
+<p>For other values of font-family, Chromium appears to request a font from my os, 
+Ubuntu 14.  /etc/ fonts/ fonts.conf specifies folders in which to look for fonts, 
+especially /usr/ share/ fonts/ truetype/.  These are used to build the font cache when 
+I run sudo fc-cache -f (-v) (font-config cache, -force update, -verbose).  When I edit 
+a file in /u/s/f/t/, in order to get Chromium to use the updates file, I have to 
+run fc-cache then restart chromium.</p>
+
+<p>/etc/ fonts/ conf-avail/ contains 82 config modules that are involved in determining
+the font actually rendered.  Certain well known font names are mapped to equivalents 
+in the Liberation family: </p>
+
+<ul>
+<li>Times / &#39;Times&#39; / Times New Roman / &#39;Times New Roman&#39; -&gt; Liberation Serif.</li>
+<li>Arial / &#39;Arial&#39; / Helvetica / &#39;Helvetica&#39; -&gt; Liberation Sans.</li>
+</ul>
+
+<p>Certain keyword variants are mapped to the DejaVu family: </p>
+
+<ul>
+<li>&#39;serif&#39; (in quotes) -&gt; DejaVu Serif.</li>
+<li>&#39;sans-serif&#39; / sans / &#39;sans&#39; / sans serif / &#39;sans serif&#39; -&gt; DejaVu Sans.</li>
+<li>&#39;monospace&#39; / mono / &#39;mono&#39; / mono space / &#39;mono space&#39;  -&gt; DejaVu Sans Mono.</li>
+</ul>
+
+<p>Font-family values appear to be case-insensitive.  When a font (like testfont, 
+described below) has limited glyphs and I employ a missing glyph, the browser 
+tries to determine a fallback font.  It&#39;ll first use my font-stack (eg. with 
+{font-family: testfont, FreeSerif}, it&#39;ll use FreeSerif); if I don&#39;t supply a 
+fallback, the browser doesn&#39;t use the &#39;standard&#39; font from its own settings; 
+instead, it appears to submit a null request to the os, which is handled by 
+three config modules: </p>
+
+<ul>
+<li>49-sansserif.conf: if font doesn&#39;t have a family, make it sans-serif.</li>
+<li>57-dejavu-sans.conf: interpret sans-serif as <em>dejavu sans</em>{green}.</li>
+<li>10-hinting-slight.conf: use &#39;slight hinting&#39;, which in this case 
+increases the font-weight. (Font hinting is a topic I haven&#39;t explored.)</li>
+</ul>
+
+<p>Hence my use of DejaVu Sans.</p>
+
+<p>Establishing what fonts are being used isn&#39;t simple.  getComputedStyle often 
+reports an intermediate value like &#39;sans&#39;.  Method that usually works in Chromium: </p>
+
+<ul>
+<li>Select element in devtools.</li>
+<li>Go to styles tab /</li>
+<li>box-model-styles pane.</li>
+<li>Scroll to bottom under &#39;rendered fonts&#39;.</li>
+</ul>
+
+<p>Afaik this can&#39;t be accessed programmatically (say to console.log an element&#39;s 
+true font).  I&#39;ve seen this fail in a few situations: </p>
+
+<ul>
+<li>I think with <code>&lt;pre&gt;</code>.</li>
+<li>When remotely inspecting an attached phone.  In these 2 cases, the &#39;rendered
+fonts&#39; section doesn&#39;t appear.</li>
+<li>If I employ a missing glyph and don&#39;t specify a fallback, or my fallback is 
+DejaVu Sans; I remove DejaVuSans.ttf and restart chromium.  In that case 
+&#39;rendered fonts&#39; lists the name as a null string, though it does
+render the glyphs.</li>
+</ul>
+
+<p>Having determined that, I hardcoded those fonts into my css:</p>
+
+<ul>
+<li>Open the ttf file in FontForge.</li>
+<li>Select all non-keyboard glyphs / right-click / clear - reduces file size from
+~700k to ~40k; CodePen has a 1MB page limit.</li>
+<li>File menu / &#39;export&#39; new ttf file (as opposed to saving in fontforge&#39;s .sfd format).</li>
+<li>Upload to <a href="http://www.fontsquirrel.com/tools/webfont-generator">FontSquirrel&#39;s converter</a> 
+with settings:
+
+<ul>
+<li>expert</li>
+<li>WOFF (or whatever I want)</li>
+<li>hinting: keep existing</li>
+<li>vertical: no adjustment (otherwise strips out line gap)</li>
+<li>x-height matching: none</li>
+<li>subsetting: none (though this works as an alternative to manually clearing
+unwanted glyphs in fontforge)</li>
+<li>css: base64 encode</li>
+</ul></li>
+<li>Download kit; extract; open styles.css.</li>
+<li>use the following css:</li>
+</ul>
+
+<p>@font-face {
+  font-family: &#39;<em>nameIPick</em>{green}&#39;;
+  src        : url(data:application/font-woff;charset=utf-8;base64,<em>b64string</em>{green}) 
+               format(&#39;woff&#39; <em>(or other)</em>{green}) } <meta c='pre'></p>
+
+<p>Base64 encodes binary as text using 64 printable characters:</p>
+
+<ul>
+<li>A-Z, a-z, 0-9 - which is 62 characters.</li>
+<li>Last 2 chars are + / in &#39;standard base64&#39; variant, which is what FontSquirrel
+generates, which Chromium accepts.</li>
+<li><a href="https://en.wikipedia.org/wiki/Base64#URL_applications">Wikipedia entry</a>
+talks about the need to either use &#39;modified Base64 for URL&#39; or encode the 
+standard b64 string, I think when passing it to a server as a url-encoded datum.</li>
+</ul>
+
+<p>64 = 2^6: each character represents a sextet (6 bits); hence each 4 characters
+represent 3 bytes of encoded data.  Thus base64 is not a compression algorithm
+(it uses 4 bytes to encode 3 bytes) but a padding / normalization algorithm.</p>
+
+<p>Woff (web open font format) works with Chromium and, according to CanIUse, 94%
+of US browsers, the exception being legacy IE, which needs eot (embedded open 
+type).</p>
+
+<div class='mdCaptureEnd'></div>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- NOTE: DISPLAY INLINE-BLOCK ----------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<div class='discloseC mdCaptureStart'></div>
+
+<p><strong>Display: inline-block</strong></p>
+
+<p>An inline element&#39;s background fills its content box; the inline box can&#39;t
+be styled directly; it&#39;s visible only by its effect on the containing line
+box.  However, when set to display:inline-block, the inline element generates
+no content box, and its inline box becomes a miniature &#39;block formatting
+context&#39; - ie., it can have multiple line boxes and inline boxes inside it.
+In this case, the background fills the inline box, which is to say the inline
+box can be styled directly.  Switching to inline-block does not alter the 
+layout as long as the element doesn&#39;t</p>
+
+<ul>
+<li>contain nested elements whose styles alter the size of the inline box;</li>
+<li>vertically align nested elements differently than its parent;</li>
+<li>break into &gt;1 line, if its line-height != container&#39;s line-height; or</li>
+<li>have an explicit height</li>
+<li>(and probably other scenarios I haven&#39;t thought of / run across).</li>
+</ul>
+
+<p>The 3 &#39;notes about display&#39; in line-height section explore these scenarios.</p>
+
+<div class='mdCaptureEnd'></div>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- NOTE: COMPLEX BOX INTERACTION -------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<div class='discloseC mdCaptureStart'></div>
+
+<p><strong>Complex box interaction</strong></p>
+
+<p>I find it difficult to intuit the behavior of the example above when the 
+strut and inline box are hidden (as they are without artificial visualization 
+aids).  There are 3 behavioral zones (visualize with <label>red triangles</label>
+<input id='Ctr02chkTriangles' type='checkbox'>) as line-height increases:</p>
+
+<ul>
+<li><p>_<strong><em>Left</em></strong>_ zone: nothing happens.  Unseen reason: strut fully vertically
+overlaps pink inline box and determines line box top &amp; bottom.</p></li>
+<li><p>_<strong><em>Middle</em></strong>_: line box gets taller; nothing happens to content box.  Reason:
+pink inline box extends below strut bottom &amp; determines line box bottom.</p></li>
+<li><p>_<strong><em>Right</em></strong>_: line box gets taller; content box gets lower.  Reason: pink box
+fully vertically overlaps strut &amp; determines line box top &amp; bottom.</p></li>
+</ul>
+
+<p>Calculation of the tipping-points, using formulae discussed later.
+(These notes make more sense if visualizations of the yellow strut box and pink 
+inline box are turned on.)</p>
+
+<p>Content box height @ 50px</p>
+
+<pre><code>= (a   + d  ) /em   *fs
+= (900 + 200) /1000 *50
+= 55px
+</code></pre>
+
+<p>The left triangle point is where the pink inline box has grown enough that it extends
+below baseline as much as yellow strut box.  Strut&#39;s descent below baseline</p>
+
+<pre><code>= (d   + g/2) /em   *fs 
+= (200 + 50 ) /1000 *80 
+= 20px
+</code></pre>
+
+<p>Inline box&#39;s descent below baseline</p>
+
+<pre><code>= 20px = descent      + half leading
+       = d  /em   *fs + 1/2(line height - content height)
+       = 200/1000 *50 + 1/2(line height - 55)
+       = 10           + 1/2(line height - 55)
+  10   = 1/2(line height - 55)
+  20   = line height - 55
+  75   = line height
+</code></pre>
+
+<p><em>76th pixel</em>{red} is the 1st to make the blue line box taller.</p>
+
+<p>The second triangle marks the point where the inline box&#39;s ascent equals
+the strut&#39;s ascent.  Strut&#39;s ascent</p>
+
+<pre><code>= (a   + g/2) /em   * fs 
+= (900 + 50 ) /1000 * 80 
+= 76px
+</code></pre>
+
+<p>Inline box&#39;s ascent</p>
+
+<pre><code>= 76px = ascent       + half leading
+       = a  /em   *fs + 1/2(line height - content height)
+       = 900/1000 *50 + 1/2(line height - (900+200)/1000 *50 )
+       = 45           + 1/2(line height - 55)
+  31   = 1/2(line height - 55)
+  62   = line height - 55
+ 117   = line height
+</code></pre>
+
+<p>Except the 118th pixel gets added to bottom; <em>the 119th</em>{red} is the 1st to push 
+strut &amp; content box down.</p>
+
+<div class='mdCaptureEnd'></div>
+
+<p>The content box can have horizontal margins, border, &amp; padding.
+Vertical border &amp; padding don&#39;t affect the line box; horizontal values 
+affect inline (horizontal) flow:</p>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- EXAMPLE 3 -------------------------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<div id='Ex03' class='exhibit'>
+  <p id='Ex03p'>a<span id='Ex03s'>b</span>c</p>
+</div>
+
+<div id='Ctr03' class='controls'>
+  <select id='Ctr03sel1' data-opts='inline,inline-block'></select>
+  <p><span>margin:      </span> <input type='range' id='Ctr03slider1' value='0' max='20'></p>
+  <p><span>border-width:</span> <input type='range' id='Ctr03slider2' value='0' max='20'></p>
+  <p><span>padding:     </span> <input type='range' id='Ctr03slider3' value='0' max='20'></p>
+</div>
+
+<p>The content box&#39;s background can mask the line above, due to </p>
+
+<ul>
+<li>padding / border</li>
+<li>small line-height.</li>
+</ul>
+
+<p>Green <code>&lt;span&gt;</code> below is initially </p>
+
+<pre><code>  { padding     : 4px ;
+    line-height : 1   }  
+</code></pre>
+
+<!-------------------------------------------------------------------
+---------------------------------------------------------------------
+------------- EXAMPLE 4 -------------------------------------------
+---------------------------------------------------------------------
+-------------------------------------------------------------------->
+
+<div id='Ex04' class='exhibit'>
+  <p id='Ex04p'>
+    <span id='Ex04s'>ddd1 ddd2 ddd3 ddd4 ddd5 ddd6 ddd7</span>
+  </p>
+</div>
+
+<div id='Ctr04' class='controls'>
+  <p><span>padding:    </span> 0<input type='range' id='Ctr04slider1' value='4' max='20'>20px</p>
+  <p><span>line-height:</span> 0<input type='range' id='Ctr04slider2' min='0' value='1' max='2' step='.1'>2</p>
+</div>

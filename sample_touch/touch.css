@@ -1,0 +1,79 @@
+body{max-width:30em}
+
+#spanHome a{
+  color:dodgerblue;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* Caption sentence at start of page: */
+#sp1234{
+  border       : 1px dotted grey;
+  border-radius:.2em            ;
+  background   :moccasin        }
+#sp1{color     :blue            }
+#sp2{color     :deepskyblue     }
+#sp3{color     :darkviolet      }
+#sp4{color     :grey            }
+
+/* Text log: */
+#outputFrame{
+  position     :relative       ;
+  margin-top   :.5em           }
+#dTextLog{
+  position     :absolute       ;
+  top          :0              ;
+  left         :.2em           ;
+  line-height  :1              ;
+  border       :1px dotted grey;
+  padding      :.2em           ;
+  border-radius:.2em           ;
+  background   :moccasin       ;
+  white-space  :nowrap         ;
+  max-height   :16em           ;
+  overflow     :auto           }
+.coords span{
+  color        :black          ;
+  margin-right :.5em           }
+.coords>p:not(:first-of-type){ /* Initially hide client/screenX/Y. */
+  display      :none           }
+
+/* Main taget div: */
+#dTouch{
+  position       :relative;
+  width          :50%     ;
+  margin-left    :auto    ;
+  height         :16em    ;
+  touch-action   :none    } /* to prevent zooming page */
+.marker{
+  pointer-events :none    ; /* So markers don't intercept touch events. */
+  display        :flex    ;
+  justify-content:center  ;
+  align-items    :center  ;
+  height         :2em     ;
+  width          :2em     ;
+  border-radius  :1em     ;
+  position       :absolute;
+  color          :white   }
+
+/* Gesture backgrounds: */
+#dTouch,#sp5{background:#509E92}
+.swipedUp   {background:linear-gradient(180deg,mediumvioletred,mediumspringgreen) !important}
+.swipedDown {background:linear-gradient(  0deg,mediumvioletred,mediumspringgreen) !important}
+.swipedLeft {background:linear-gradient( 90deg,mediumvioletred,mediumspringgreen) !important}
+.swipedRight{background:linear-gradient(270deg,mediumvioletred,mediumspringgreen) !important}
+.pinched    {background:radial-gradient(       mediumvioletred,mediumspringgreen) !important}
+.spread     {background:radial-gradient(       mediumspringgreen,mediumvioletred) !important}
+
+/* Options/Notes sections: */
+#sliFS{width:6em   } /* Compress it horizonally a bit. */
+#struckOut{     text-decoration:line-through;
+                color          :red         }
+#struckOut span{text-decoration:underline   ;
+                color          :blue        }
+
+
+
+
+
+

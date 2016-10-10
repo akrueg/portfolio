@@ -1,0 +1,131 @@
+/* Example 1 */
+/* Controls: */
+#Ctr01{            white-space  :nowrap        ;
+                   margin-bottom:3em           }
+#Ctr01compLH, #Ctr01compH{
+                   color        :blue          }
+#Ctr01 input[type=range]{
+                   width        :200px         }
+/* Exhibit: */
+#Ex01{             background   :lightblue     ;
+                   font-size    :50px          ;
+                   font-family  :tf,fs,sans-serif;
+                   white-space  :nowrap        ;
+                   margin-bottom:0             ;
+              border:1px solid grey;
+              border-bottom:none;
+              z-index:2; /* So overhanging green box doesn't get following text printed on its bottom edge. */
+              position:relative;
+}
+#Ex01>span{        margin-right :5px           }
+#Ex01>span:last-of-type{
+                   margin-right :0             }
+#Ex01s0{/*strut*/  display      :inline-block  ;
+                   background   :#ffff80       } 
+#Ex01s1, #Ex01s2,
+#Ex01s3, #Ex01s4{  line-height  :1             ;
+                   font-size    :100px         ;
+                   height       :100px          }
+#Ex01s3,  #Ex01s4{ display      :inline-block  }
+#Ex01s1,  #Ex01s2{ background   :#40bf77       }
+#Ex01s3,  #Ex01s4{ background   :pink          }
+#Ex01s2w, #Ex01s4w{font-size    :0             ;
+                   display      :inline-block  }
+#Ex01s2w{          background   :crimson       }
+#Ex01s4w{          background   :rebeccapurple }
+#Ex01s2w, #Ex01s4w{padding      :0 10px        }
+#Ex01s1,  #Ex01s3{ display      :none          }
+
+#Margin01{border-left:1px solid grey;
+          border-right:1px solid grey;
+          height:.7em;
+          height:0;
+          margin:0}
+
+#Discussion01{margin:0 0 2em 0;
+              padding:1em .5em;
+              height:15em;
+              overflow:auto;
+              border:1px solid grey;
+              border-top:none;
+              }
+#Discussion01 p:first-child{margin-top:0}
+#Discussion01 ul:last-child 
+li:last-child p {margin-bottom:0}
+
+/* example 2 */
+/* Label rows: */
+#Ex02row1 p, #Ex02row2 p, #Ex02row3 p, #Ex02row4 p{
+  text-align   :center         ;
+  margin       :0              ;
+  display      :inline-block   }
+#Ex02row2, #Ex02row3, #Ex02row4{
+  margin-bottom:.2em           }
+/* Row 1: */
+#Ex02row1 p{background   :lightgrey       }
+#Ex02row1c1{width        :190px           ;
+            margin-right :5px !important }
+#Ex02row1c2{width        :60px           }
+/* Row 2: */
+#Ex02row2 p{background   :wheat       }
+#Ex02row2c1{width        :125px           }
+/* Row 3: */
+#Ex02row3 p{background   :wheat       }
+#Ex02row3c1{margin-left  :65px !important ;
+            width        :190px           }
+/* Row 4: */
+#Ex02row4 p{width        :60px;
+            margin-right :5px}
+#Ex02row4c2{width        :125px !important}
+#Ex02row4 p:nth-of-type(odd){ color        :#40bf77           ;
+                              border-bottom:2px solid #40bf77 }
+#Ex02row4 p:nth-of-type(even){color        :orchid          ;
+                              border-bottom:2px solid orchid}
+/* Exhibit: */
+/* Use separate from container to set vertical space. */
+#Ex02{            height     :5em         }
+#Ex02container{   white-space:nowrap      ;
+                  background :powderblue   }
+#Ex02, #Ex02container{
+                  margin     :0           }
+#Ex02container p{ background :firebrick   ;
+                  display    :inline-block;
+                  font-size  :25px        ;
+                  line-height:1           ;
+                  width      :60px        ;
+                  margin     :0 5px 0 0   }
+#Ex02s1,#Ex02s2,#Ex02s3,
+#Ex02img1{        width      :50px        ;
+                  height     :10px        }
+#Ex02s1{          background :#40bf77     }
+#Ex02s2{          color      :white       }
+#Ex02s2,#Ex02s3,
+#Ex02img1{        background-size:100%    }
+#Ex02s2,#Ex02s3{  display    :inline-block}
+/* Controls: */
+#Ctr02 span{      display    :inline-block;
+                  width      :1em         }
+
+#Ex03p{     margin-left:2em  }
+#Ex03p span{color      :green}
+#Ex03s{     color      :red  ;
+           font-weight:bold ;
+           font-family:serif;
+           font-size  :1.2em}
+#Ex03p2{display:flex;
+        justify-content:center;
+        align-items:center;
+        height:7em;
+        width:7em;
+        background:black}
+#Ex03img{height:5em;
+        width:5em;
+        background-size:100%}
+
+/* example 4 */
+#Ex04 span:not([id]){display:inline-block;
+                     width :5em;
+                     height:5em;
+                     background-size:100%}
+#Ctr04txt1{width:3em}
+

@@ -1,0 +1,33 @@
+.parallel,.parallel2{font-weight:bold     }
+.parallel{           color      :limegreen}
+.parallel2{          color      :fuchsia  }
+
+/* example 1 */
+#Ex01{         background :lightblue   ;
+               white-space:nowrap      ;
+               font-size  :50px        ;
+               font-family:dj          }
+#Ex01s1,#Ex01s2{
+               background :#ffff80     ;
+               display    :inline-block}
+#Ex01s2{       background :pink        ;
+               vertical-align:10px     }
+
+#Ctr01 tr:nth-of-type(4) td{
+  font-weight:bold;
+  padding-top:.5em}
+#Ctr01 input, 
+#Ctr01 select{  width      :8em      }
+
+/* Note on px */
+#dInch1, #dInch2, #dInch3{
+  background:blue ;
+  color     :white;
+  margin    :1em  }
+#dInch1{height: 1in; width: 1in}
+#dInch2{height:72pt; width:72pt}
+#dInch3{height:96px; width:96px}
+
+
+
+
