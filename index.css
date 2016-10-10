@@ -21,6 +21,8 @@ a span:before{
   display       :inline-block  ;
   content       :'\279c'       ;
   transform     :rotate(-90deg)}
+#inlineLinks{
+  line-height   :2             }
 #inlineLinks a{
   margin-right  :.75em         }
 
