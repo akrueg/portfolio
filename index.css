@@ -1,3 +1,4 @@
+/* Intro: */
 #spanMyName{
   color         :dodgerblue    ;
   font-weight   :bold          }
@@ -6,24 +7,33 @@ h2{
 h3{
   margin-top    :2em           ;
   font-size     :1.1em         }
+.goodBrowser, .badBrowser{
+  font-size     :1.2em         }
+.goodBrowser{
+  color         :green         }
+.goodBrowser:after{
+  content       :' \2714'      } /* check */
+.badBrowser{
+  color         :red           }
+.badBrowser:after{
+  content       :' \2718'      } /* x */
+
+/* Samples: */
 a{color         :blue          }
-a span:before{
-  color         :orchid        ;
-  font-size     :1.2em         ;
-  vertical-align:-.1em         ;
-  font-weight   :bold          ;
-  display       :inline-block  ;
-  cursor        :pointer       }
-a span:before{
-  content       :'\279c'       ;
-  transform     :rotate(-45deg)}
-.upArrow:before{
-  display       :inline-block  ;
-  content       :'\279c'       ;
-  transform     :rotate(-90deg)}
 #inlineLinks{
   line-height   :2             }
 #inlineLinks a{
   margin-right  :.75em         }
+
+/* Sources: */
+a span:before{
+  content       :'\279c'       ; /* arrow */
+  display       :inline-block  ;
+  transform     :rotate(-45deg);
+  color         :orchid        ;
+  font-size     :1.2em         ;
+  font-weight   :bold          ;
+  vertical-align:-.1em         ;
+  cursor        :pointer       }
 
 
