@@ -15,11 +15,12 @@
   
 {{ content }}
   
-  <script type='text/javascript' src='/portfolio/shared/js1--misc.js'></script>
-  <script type='text/javascript' src='/portfolio/shared/js2--markdown.js'></script>
-  <script type='text/javascript' src='/portfolio/shared/js3--drag-size.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.17.0/babel.min.js"></script>
+  <script type='text/babel' src='/portfolio/shared/js1--misc.js'></script>
+  <script type='text/babel' src='/portfolio/shared/js2--markdown.js'></script>
+  <script type='text/babel' src='/portfolio/shared/js3--drag-size.js'></script>
   {% for script in page.js %}
-  <script type='text/javascript' src='/portfolio/{{ script }}.js'></script>
+  <script type='text/babel' src='/portfolio/{{ script }}.js'></script>
   {% endfor %}
 </body>
 
