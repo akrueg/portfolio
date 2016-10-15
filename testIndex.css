@@ -1,0 +1,39 @@
+/* Intro: */
+#spanMyName{
+  color         :dodgerblue    ;
+  font-weight   :bold          }
+h2{
+  font-size     :1.4em         }
+h3{
+  margin-top    :2em           ;
+  font-size     :1.1em         }
+.goodBrowser, .badBrowser{
+  font-size     :1.2em         }
+.goodBrowser{
+  color         :green         }
+.goodBrowser:after{
+  content       :' \2714'      } /* check */
+.badBrowser{
+  color         :red           }
+.badBrowser:after{
+  content       :' \2718'      } /* x */
+
+/* Samples: */
+a{color         :blue          }
+#inlineLinks{
+  line-height   :2             }
+#inlineLinks a{
+  margin-right  :.75em         }
+
+/* Sources: */
+a span:before{
+  content       :'\279c'       ; /* arrow */
+  display       :inline-block  ;
+  transform     :rotate(-45deg);
+  color         :orchid        ;
+  font-size     :1.2em         ;
+  font-weight   :bold          ;
+  vertical-align:-.1em         ;
+  cursor        :pointer       }
+
+
