@@ -26,6 +26,8 @@ a{color         :blue          }
   margin-right  :.75em         }
 
 /* Sources: */
+#sourceList li{
+  margin         :1em 0         }
 #sourceList a {
   text-decoration:none          }
 a span:before{
