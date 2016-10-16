@@ -74,21 +74,29 @@ in many professional / commercial settings:
 
 **Source Code**
 
-- GitHub repo of this portfolio [<span>????</span>](https://github.com/akrueg/portfolio). <meta i='sourceList'>
+- GitHub: <meta i='sourceList'>
 
-- Index of all pages on CodePen [<span></span>](https://codepen.io/akrueg/pen/BLoJxB),
-  which contains the samples listed here plus further research on touch
-  events, inline formatting, flexboxes, and other topics.
+  - [<span></span>](https://github.com/akrueg/portfolio) repo of this portfolio,
+    containing:
   
-- Sample 1 on CodePen [<span></span>](https://codepen.io/akrueg/pen/groBgm),
-  which contains the page's original markdown source - CodePen and GitHub use
-  different markdown flavors (RedCarpet & KramDown), so I'm posting precompiled
-  html on GitHub.
+  - _&#10048; human-readable source files: .md, .es6, & .css_{green}
   
-- Sample 2, part 1 on CodePen [<span></span>](https://codepen.io/akrueg/pen/rLxzdE);
-  the other parts are listed on the CodePen index page above.
+  - _&#9760; machine-compiled files: .html_{red}, included because CodePen and 
+    GitHub support incompatible markdown flavors (RedCarpet & KramDown);
+    _.js_{red}, transpiled by Babel to support pre-es6 browsers.
+  
+- CodePen:
 
-- Sample 3 on CodePen [<span></span>](https://codepen.io/akrueg/pen/qaNYjN).
+  - [<span></span>](https://codepen.io/akrueg/pen/BLoJxB) index of all pages,
+    which contains the samples listed here plus further research on touch
+    events, inline formatting, flexboxes, and other topics.
+  
+  - [<span></span>](https://codepen.io/akrueg/pen/groBgm) Sample 1
+  
+  - [<span></span>](https://codepen.io/akrueg/pen/rLxzdE) Sample 2 part 1;
+    the other parts are listed on index page above.
+
+  - [<span></span>](https://codepen.io/akrueg/pen/qaNYjN) Sample 3
 
 <div class='mdCaptureEnd'></div>
 
