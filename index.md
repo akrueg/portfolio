@@ -6,7 +6,7 @@ The samples below were developed for
 - <span class='goodBrowser'>Chrome for Android</span>
 - <span class='goodBrowser'>FireFox</span> 
 
-Coming soon: 
+Coming soon / partial support for 
 
 - <span class='badBrowser'>Safari</span>
 - <span class='badBrowser'>IE / Edge</span>
