@@ -1,23 +1,34 @@
 /* Intro: */
 #spanMyName{
-  color         :dodgerblue    ;
-  font-weight   :bold          }
+  color         :dodgerblue      ;
+  font-weight   :bold            }
 h2{
-  font-size     :1.4em         }
+  font-size     :1.4em           }
 h3{
-  margin-top    :2em           ;
-  font-size     :1.1em         }
+  margin-top    :2em             ;
+  font-size     :1.1em           }
 .goodBrowser, .badBrowser{
-  font-size     :1.2em         }
+  font-size     :1.2em           }
+.goodBrowser:after, .badBrowser:after{
+  font-weight   :bold            }
 .goodBrowser{
-  color         :green         }
+  color         :green           }
 .goodBrowser:after{
-  content       :' \2713'      ; /* check */
-  font-weight   :bold          }
+  content       :' \2713'        } /* check */
 .badBrowser{
-  color         :red           }
+  color         :red             }
 .badBrowser:after{
-  content       :' \2718'      } /* x */
+  content       :'?'             ; 
+  margin-left   :.5em            ;
+  color         :transparent     ; /* fuzzy */
+  text-shadow   :0 0 2px 
+                 rgba(255,0,0,.6);
+  display       :inline-block    ; /* rotated */
+  transform     :rotate(135deg)
+                 scale(1.3)      }
+li:nth-of-type(2) .badBrowser:after{
+  transform     :rotate(215deg)
+                 scale(1.3)      }
 
 /* Samples: */
 a{color         :blue          }
