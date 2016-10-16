@@ -12,7 +12,8 @@ h3{
 .goodBrowser{
   color         :green         }
 .goodBrowser:after{
-  content       :' \2714'      } /* check */
+  content       :' \2713'      ; /* check */
+  font-weight   :bold          }
 .badBrowser{
   color         :red           }
 .badBrowser:after{
