@@ -65,7 +65,9 @@ input[type=range   ]    {transform      :scale(1,1.4)
 
 .disclosure            {transition      :height 1s            }
 .disclosureClosed      {overflow        :hidden               }
-.disclosureTitle       {cursor          :pointer              ;
+.disclosureTitle       {display         :table                ;
+                        margin-top      :0                    ;
+                        cursor          :pointer              ;
                         color           :teal                 }
 .disclosureTitle:before{border-style    :solid                ; 
                         content         :''                   ;         
